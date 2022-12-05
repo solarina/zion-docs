@@ -1,6 +1,6 @@
 # Merchant Guide
 
-A vey short guide for the merchant who want to connect their shops into our
+A vey short guide for the merchant who wants to connect their shops to our
 payment system.
 
 ## Login
@@ -33,10 +33,10 @@ leave this field empty, you will not receive any notifications.
 
 ## Get the API key
 
-If you want to have accesses to your account from the code, You are going to
-need an API key. This is really important to you keep this key very safe and
-never share this with anyone because anyone with this API key is have the full
-control over your account.
+If you want to have access to your account from the code, you need an API key.
+This is really important for you to keep this key very safe and never share it
+with anyone. Since with this API key, everyone would have the full control over
+your account.
 
 From the sidebar select "Account" button and in the "Account settings" tab you
 are going to see your API key.
@@ -70,7 +70,7 @@ curl --request POST \
   }'
 ```
 
-if everything was okay, and you made the correct request the server will send
+if everything was okay, and you made the correct request, the server will send
 you a response like this:
 
 ```json
@@ -81,8 +81,8 @@ you a response like this:
 }
 ```
 
-here the most important data is the ID, and you are going to use this to
-redirect your customer to our website.
+The most important data here is the ID, and you want to use this to redirect
+your customers to our website.
 
 ## Generate payment page URL
 
@@ -99,12 +99,12 @@ with your shop name and your order amount.
 ![login](resources/payment-page.png)
 
 On this page they can choose from the list of available coins, and after
-transaction verification you are going to receive the money
+verification of the transaction, you can receive the money.
 
 ## Verify order
 
 After verification of the order, our server will send a POST request to your
-shop callback URL. The payload or the body of the request is like this:
+shop's callback URL. The payload or the body of the request is like this:
 
 ```json
 {
@@ -136,7 +136,7 @@ and you will receive a response like this:
 }
 ```
 
-here the status is very important, you should only accept an order if its status
+The status here is very important. You should only accept an order if its status
 is "Filled" otherwise it means the order is failed, and you have not received
-any money. 
+any money.
 
