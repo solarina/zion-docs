@@ -1,25 +1,25 @@
 # Merchant Guide
 
-A vey short guide for the merchant who want to connect their shops into our 
+A vey short guide for the merchant who want to connect their shops into our
 payment system.
 
 ## Login
 
-Go to the https://zion.ae/login/ and login with your username and password
+Go to https://zion.ae/login/ and login with your username and password.
 
 ![login](resources/login-page.png)
 
 ## Switch Shop
 
-From the sidebar just below the shop name, you can select te "switch account"
+From the sidebar just below the shop name, you can select the "switch account"
 button. Then you will see a list of all your shops. Select the shop that you
-like to work on.
+like to work with.
 
 ![login](resources/switch-shop.png)
 
 ## Get the Shop ID
 
-Select the "Settings" button from the sidebar, and in opened page go to the
+Select the "Settings" button from the sidebar, and on opened page go to the
 second tab which is "Shop settings".
 
 ![login](resources/shop-id.png)
@@ -45,7 +45,7 @@ are going to see your API key.
 
 ## Generate an order
 
-You can use your shop ID and your API key to generate nd order. You can replace
+You can use your shop ID and your API key to generate an order. You can replace
 your credentials in the following sample:
 
 ```shell
@@ -70,8 +70,8 @@ curl --request POST \
   }'
 ```
 
-if everything be okay, and you made the correct request the server wil send you
-a response like this:
+if everything was okay, and you made the correct request the server will send
+you a response like this:
 
 ```json
 {
@@ -82,7 +82,7 @@ a response like this:
 ```
 
 here the most important data is the ID, and you are going to use this to
-redirect you customer into our website.
+redirect your customer to our website.
 
 ## Generate payment page URL
 
@@ -98,13 +98,13 @@ with your shop name and your order amount.
 
 ![login](resources/payment-page.png)
 
-In this page they can choose from the list of available coins, and after
+On this page they can choose from the list of available coins, and after
 transaction verification you are going to receive the money
 
 ## Verify order
 
-After verification of the order our server will send a POST request to your shop
-callback URL. The payload or the body of the request is like this:
+After verification of the order, our server will send a POST request to your
+shop callback URL. The payload or the body of the request is like this:
 
 ```json
 {
@@ -114,9 +114,9 @@ callback URL. The payload or the body of the request is like this:
 }
 ```
 
-NOTE: reviving this request does not guaranty that the order is completed
-successfully, you have to verify order after receive this webhook. To verify
-your order you can use this request:
+NOTE: Reviving this request does not guarantee that the order is completed
+successfully, you have to verify the order after receiving this webhook. To
+verify your order you can use this request:
 
 ```shell
 curl --request GET \
@@ -137,5 +137,6 @@ and you will receive a response like this:
 ```
 
 here the status is very important, you should only accept an order if its status
-is "Filled" otherwise it means the order is failed, and you are not received any
-money. 
+is "Filled" otherwise it means the order is failed, and you have not received
+any money. 
+
